@@ -165,7 +165,10 @@ ms.locfileid: "84240642"
 
         // Initialize an HttpWebRequest for the current URL.
         var webReq = (HttpWebRequest)WebRequest.Create(url);
-
+        //add header prvent 403 error
+        webReq.ContentType = "application/json; charset=utf-8";
+        webReq.UserAgent =
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36 Edg/84.0.522.44"
         // Send the request to the Internet resource and wait for
         // the response.
         // Note: you can't use HttpWebRequest.GetResponse in a Windows Store app.
